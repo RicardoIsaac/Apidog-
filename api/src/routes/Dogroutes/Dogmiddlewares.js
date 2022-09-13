@@ -19,6 +19,7 @@ router.get("/", async (req, res) => {
     const allDogs = await getAllDogs();
     if (name) {
         const dog = allDogs.filter(d => d.name.toLowerCase().includes(name.toLowerCase()));
+        res.status(200).send(dog)
     } else {
         res.status(200).send(allDogs);
     }

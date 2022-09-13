@@ -70,10 +70,10 @@ export function selectesDogs (id)  {
 ///////////////
 export function postDog (payload)  {
     return async function (dispatch) {
-        const data= await axios.post("http://localhost:3001/create",payload)
+        const response= await axios.post("http://localhost:3001/dogs/create",payload)
         return dispatch({
             type: "POST_DOG",
-            payload: data.data
+            payload: response.data
         })
     }
 }

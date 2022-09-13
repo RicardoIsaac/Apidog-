@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setBreed } from "../redux/actions/productActions";
 import "./searchbar.css"
 
-export default function SearchBar({setPage}) {
+export default function SearchBar() {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
@@ -15,9 +15,9 @@ export default function SearchBar({setPage}) {
     function handleSubmit(e){
         e.preventDefault()
         dispatch(setBreed(name));
-        setPage(1);
-        setName("")
+        console.log(name)
     }
+
 
     return(
         <div className="containersb">

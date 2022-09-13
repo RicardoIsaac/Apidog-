@@ -8,7 +8,8 @@ const Card = ({image,name,temperament,weight}) => {
         texto = texto+temperament[i]+" ";
         
     }
-    console.log(texto)
+console.log(name)
+console.log("//////////////////")
 
         return (
            <div>

@@ -5,7 +5,7 @@ import { setDogs , FilterByTemperament , setTemperaments,filterCreated } from ".
 
 export default function Filter() {
     const dispatch = useDispatch();
-  //  const allDogs = useSelector((state) => state.dogs);
+   // const allDogs = useSelector((state) => state.dogs);
     const allTemp= useSelector((state) => state.temperaments)
 
     useEffect(() => {

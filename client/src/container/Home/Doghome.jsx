@@ -51,11 +51,17 @@ const Doghome = () => {
     setorden(e.target.value)
   }
   return (
+    <div>
     <div className="homebody">
       <Header/>
     <div>
       <div className="homesearch">
-    <SearchBar setPage={setPage}/>
+    <SearchBar/>
+    <Paginated
+        dogPage={dogPage}
+        allDogs={allDogs.length}
+        paginado={paginated}
+      />
        <Filter />
 
         <select onChange={(e) => handleOrderName(e)}>
@@ -100,11 +106,8 @@ const Doghome = () => {
         <p >loading...</p>
       )}
     </div>
-    <Paginated
-        dogPage={dogPage}
-        allDogs={allDogs.length}
-        paginado={paginated}
-      />
+
+  </div>
   </div>
 );
 

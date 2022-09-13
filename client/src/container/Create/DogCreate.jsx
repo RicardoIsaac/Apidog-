@@ -38,7 +38,9 @@ export default function DogCreate() {
       [e.target.name]: e.target.value,
     })
     );
+ 
   }
+
 
   /*function handleSelect(e) {
     if (!temps.includes(e.target.value)) {
@@ -60,10 +62,12 @@ export default function DogCreate() {
       && input.min_height && input.max_height && input.life_span && input.temperament) {
       const newDog = {
         name: input.name,
-        weight: input.min_weight + "-" + input.max_weight,
-        height: input.min_height + "-" + input.max_height,
+        min_height:input.min_height,
+        max_height:input.max_height,
+        min_weight: input.min_weight,
+        max_weight:input.max_weight,
         life_span: input.life_span,
-        temperament: temps
+        
       }
       e.preventDefault();
       dispatch(postDog(newDog))
@@ -89,52 +93,33 @@ export default function DogCreate() {
 
 
   return (
-    <div >
+    <div className="detailall">
+    <div className="Titulo" >
       <Header />
-      <h1>titulo placeholder</h1>
-
+    </div>
+    <div className="Cuerpo">
+<div className="contenedor">
       <form onSubmit={(e) => handlesubmit(e)}>
-        <div >
-          <label>name</label>
-          <input type="text" name="name" value={input.name} onChange={handleChange}></input>
-          {errors.name && (<p>{errors.name}</p>)}
+
+        <div className="name">
+          <input type="text" name="name" value={input.name} onChange={handleChange} placeholder="name"></input> 
         </div>
         {/*  /////////////////*/}
-
-        <div>
-          <label>Height min</label>
-          <input type="number" name="min_height" value={input.min_height} onChange={handleChange}></input>
-          {errors.min_height && (<p>{errors.min_height}</p>)}
-          <label>Height Max</label>
-          <input type="number" name="max_height" value={input.max_height} onChange={handleChange}></input>
-          {errors.max_height && (<p>{errors.max_height}</p>)}
-
-          {errors.altura &&(<p>{errors.altura}</p>)}
+        <div className="height">
+          <input type="number" name="min_height" value={input.min_height} onChange={handleChange}placeholder="Height min"></input>
+          <input type="number" name="max_height" value={input.max_height} onChange={handleChange}placeholder="Height Max"></input>
+          </div>
+          <div className="weight">
+          <input type="number" name="min_weight" value={input.min_weight} onChange={handleChange}placeholder="Weight min"></input>
+          <input type="number" name="max_weight" value={input.max_weight} onChange={handleChange}placeholder="Weight Max"></input>
         </div>
         {/*  /////////////////*/}
-
-        <div>
-          <label>Weight min</label>
-          <input type="number" name="min_weight" value={input.min_weight} onChange={handleChange}></input>
-          {errors.min_weight && (<p>{errors.min_weight}</p>)}
-          <label>Weight Max</label>
-          <input type="number" name="max_weight" value={input.max_weight} onChange={handleChange}></input>
-          {errors.max_weight && (<p>{errors.max_weight}</p>)}
-
-          {errors.peso &&(<p>{errors.peso}</p>)}
+        <div className="lifespan">
+          <input type="number" name="life_span" value={input.life_span} onChange={handleChange}placeholder="life_span"></input>
         </div>
         {/*  /////////////////*/}
-
-        <div>
-          <label>life_span</label>
-          <input type="number" name="life_span" value={input.life_span} onChange={handleChange}></input>
-          {errors.life_span && (<p>{errors.life_span}</p>)}
-        </div>
-        {errors.number &&(<p>{errors.number}</p>)}
-        {/*  /////////////////*/}
-        <div>
-        <label>Temperaments:</label>
-        <select name="temperament" onChange={handleChange}>
+        <div className="temperament">
+        <select name="temperament" onChange={handleChange} placeholder="Temperaments">
           {temperaments.map((temp,id)=>(
             <option key={id} value={null}>
               {temp.name}
@@ -159,8 +144,23 @@ export default function DogCreate() {
         </div>
 
       </form>
+      </div>
+      <div>{
+        
+      }</div>
+      <div className="contenedor">
+        {errors.name && (<p>{errors.name}</p>)}
+        {errors.min_height && (<p>{errors.min_height}</p>)}
+        {errors.max_height && (<p>{errors.max_height}</p>)}
+        {errors.altura &&(<p>{errors.altura}</p>)}
+        {errors.min_weight && (<p>{errors.min_weight}</p>)}
+        {errors.max_weight && (<p>{errors.max_weight}</p>)}
+        {errors.peso &&(<p>{errors.peso}</p>)}
+        {errors.number &&(<p>{errors.number}</p>)}
+        {errors.life_span && (<p>{errors.life_span}</p>)}
+      </div>
+      </div>
     </div>
-
   )
 
 }

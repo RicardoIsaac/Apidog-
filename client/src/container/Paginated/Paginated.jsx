@@ -5,9 +5,6 @@ export default function Paginated({dogsPerPage,alldogs,paginado}) {
     for(let i=1; i<=Math.ceil(alldogs/dogsPerPage); i++){
       pageNumbers.push(i) 
     }
-    console.log(dogPage)
-    console.log(alldogs)
-    console.log(pageNumbers)
     return(
 
         <ul className="paged">
