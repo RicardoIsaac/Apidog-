@@ -1,0 +1,31 @@
+.containersb{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 15px;
+  }
+  .input {
+     
+    border: 3px solid goldenrod;
+    background-image: url("https://images.unsplash.com/photo-1545873509-33e944ca7655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZCUyMHRleHR1cmV8ZW58MHx8MHx8&w=1000&q=80");
+
+      width: 210px;
+      height: 42px; 
+      font-size: 14px;
+      color: rgb(126, 95, 18);
+      text-align:center;
+      cursor: pointer;  
+    }
+    
+    .button {
+      border: 3px solid goldenrod;
+      background-image: url("https://images.unsplash.com/photo-1545873509-33e944ca7655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZCUyMHRleHR1cmV8ZW58MHx8MHx8&w=1000&q=80");
+      color: rgb(126, 95, 18);
+
+      text-align:center;
+      cursor: pointer;
+      width: 100px;
+      height: 50px;
+      font-size: 17px;
+    }
+    

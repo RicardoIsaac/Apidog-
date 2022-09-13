@@ -1,0 +1,27 @@
+.paged {
+    text-decoration: none;
+  }
+  
+  .listContainer {
+    display: inline-flex;
+    flex-direction: row;
+  }
+  
+  .number {
+    color: rgb(243, 2, 2);
+    list-style: none;
+    padding: 5px;
+    font-size: 18px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  .containersc{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 15px;
+    border: 20px solid transparent;
+    border-image: url("https://i.imgur.com/q1gOHfC.png") 15 stretch;
+    position: relative;
+  }
