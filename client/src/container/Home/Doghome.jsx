@@ -111,19 +111,19 @@ const Doghome = () => {
                       el.temperament
                         ? el.temperament
                         : el.temperaments &&
-                        el.temperaments.map((el) => `${el.name}, `)
+                        el.temperaments.map((temperaments)=>(temperaments))
                       }
                       TempDogs={
-                        el.temperament
-                        ? el.temperament
-                        : el.temperaments &&
-                        el.temperaments.map((el) => `${el.name}, `)
+                        el.TempDogs?
+                        el.TempDogs.map((TempDogs)=>(
+                          TempDogs.name)):false
                       }
 
                       weight={el.weight}
                       />
-                      {console.log(currentDogs)}
                 </Link>
+                {console.log(currentDogs) }
+                      
                       
               </div>
               

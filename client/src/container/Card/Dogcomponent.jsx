@@ -3,19 +3,22 @@ import "./DogComponent.css"
 
 
 export default function Card ({image,name,temperament,weight,TempDogs})  {
+    console.log(temperament)
 let texto="";
     if(temperament){
     for (let i = 0; i < temperament.length; i++) {
         texto = texto+temperament[i]+" ";
         
     }
-    console.log(temperament)}
+    }
     if(TempDogs){
-        for (let i = 0; i < temperament.length; i++) {
-            texto = texto+temperament[i]+" ";
+        for (let i = 0; i < TempDogs.length; i++) {
+            texto = texto+TempDogs[i]+" ";
             
         }
-        console.log(TempDogs)  
+        console.log("siuu")
+console.log(TempDogs)
+      
     }
 //console.log(name)
 //console.log("//////////////////")
@@ -30,11 +33,13 @@ let texto="";
                 </div>
                 <div className="card-back">
                 <div>Nombre: {name}</div>
-                <div>Temperamento: </div>
+ {/*texto para cambiar valores*/}           {texto?(<div>Temperamento: {texto}</div>):( <div>The temperament of this dog has been lost in the great war</div>) }
+
+              { /* <div>Temperamento: </div>
                 <div>
                     <p>{texto}</p>
- 
                 </div>
+        */}
                 <div>Tamaño: {weight[0]}-{weight[1]} cm</div>
                 </div>
                 </div>

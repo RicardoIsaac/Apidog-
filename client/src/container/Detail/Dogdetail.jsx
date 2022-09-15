@@ -33,7 +33,7 @@ export default function DogDetails() {
             <p>Height: {myDog[0].height[0]}-{myDog[0].height[1]} cm</p>
             <p>Life Span: {myDog[0].life_span}</p>
             <p>
-              Temperaments: {myDog[0].temperaments? myDog[0].temperaments.map((el) => el + ', '):myDog[0].TempDogs.map((el) => el + ', ')}
+              Temperaments: {myDog[0].temperaments? myDog[0].temperaments.map((el) => el + ', '):myDog[0].TempDogs.map(({name , value}) => ( name + ', ' ))}
             </p>
             </div>
           </div>
