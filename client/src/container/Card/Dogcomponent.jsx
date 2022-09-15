@@ -15,7 +15,7 @@ let texto="";
             texto = texto+temperament[i]+" ";
             
         }
-        console.log(temperament)  
+        console.log(TempDogs)  
     }
 //console.log(name)
 //console.log("//////////////////")

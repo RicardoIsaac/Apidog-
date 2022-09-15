@@ -26,46 +26,46 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/create", async (req, res) => {
-    let { name, 
-        height, 
-        weight, 
+    let { name,
+        height,
+        weight,
         life_span,
         createdInDb,
         temperament } = req.body
- 
-    function getImage(){
-        var images=[
-    image1 = "https://c.tenor.com/80_U-ViLG5EAAAAd/perro-dibujado-bailando-perrodibujo.gif",
-    image2 = "https://c.tenor.com/0gKQdjnZDLkAAAAd/dog-funny-dog.gif",
-    image3 = "https://c.tenor.com/T4W-AtAUegYAAAAd/byuntear-sad-dog.gif",
-    image4 = "https://c.tenor.com/ISsgBwnD3bYAAAAC/doggie-dance-dancing.gif",
-    image5 = "https://c.tenor.com/OjqDT0J2SiwAAAAd/perros-cute-muy-cute.gif"]
-      
-         let imge = Math.floor(Math.random() * 5)
-      
-        return images[imge]
-      }
 
-try {
-       const newDog = await Dog.create({
-        name, 
-        height, 
-        weight, 
-        life_span, 
-        image:getImage(),
-        createdInDb
+    function getImage() {
+        var images = [
+            image1 = "https://pbs.twimg.com/media/D1T-XoNXcAAAyyX.jpg",
+            image2 = "https://static.boredpanda.com/blog/wp-content/uploads/2020/01/dog-cat-knights-art-ponkichi-5e0c92afc9e53__700.jpg",
+            image3 = "https://i.etsystatic.com/13144415/r/il/41602a/1947020701/il_570xN.1947020701_aprt.jpg",
+            image4 = "https://c.tenor.com/ISsgBwnD3bYAAAAC/doggie-dance-dancing.gif",
+            image5 = "https://cdn.shopify.com/s/files/1/0420/1801/3336/products/9m_1024x1024@2x.jpg?v=1619601716"]
+
+        let imge = Math.floor(Math.random() * 5)
+
+        return images[imge]
+    }
+
+    try {
+        const newDog = await Dog.create({
+            name,
+            height,
+            weight,
+            life_span,
+            image: getImage(),
+            createdInDb
         })
         name
-            let associatedTemp = await TempDog.findAll({
-                where: { name: temperament},
-            })
-        
+        let associatedTemp = await TempDog.findAll({
+            where: { name: temperament },
+        })
+
         newDog.addTempDog(associatedTemp);
-    
+
         res.status(200).send(newDog)
-} catch (error) {
-    res.status(400).send(error)
-}
+    } catch (error) {
+        res.status(400).send(error)
+    }
 })
 
 router.get("/:idRaza", async (req, res) => {
