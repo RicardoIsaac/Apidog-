@@ -40,9 +40,9 @@ export default function Filter() {
         </select>
   
         <select  onChange={(e) => handleFilterCreated(e)}>
-          <option value="all">All Lords</option>
-          <option value="exist">Old Lords</option>
-          <option value="created">New Lords</option>
+          <option value="all">All</option>
+          <option value="exist">Existing</option>
+          <option value="created">Created</option>
         </select>
       </div>
       )

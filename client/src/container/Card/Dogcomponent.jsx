@@ -3,7 +3,7 @@ import "./DogComponent.css"
 
 
 export default function Card ({image,name,temperament,weight,TempDogs})  {
-    console.log(temperament)
+
 let texto="";
     if(temperament){
     for (let i = 0; i < temperament.length; i++) {
@@ -16,8 +16,7 @@ let texto="";
             texto = texto+TempDogs[i]+" ";
             
         }
-        console.log("siuu")
-console.log(TempDogs)
+
       
     }
 //console.log(name)

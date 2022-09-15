@@ -19,7 +19,7 @@ function App() {
       <Route path="/dogs/:id"  component={DogDetails}/>
 
       </Switch>
-{<Footer/>}
+{/*<Footer/>*/}
       </Router>
       
     </div>

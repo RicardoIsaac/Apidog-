@@ -25,15 +25,20 @@ function rootReducer(state = initialState, action) {
             }
 
         case "FILTER_TEMPERAMENTS":
-            const allDogs = state.alldogs
-            const filtTemp = allDogs.filter((el) => el.temperaments?.includes(action.payload))
+           
+            const filtTemp = state.dogs.filter((el) => el.temperaments?.includes(action.payload))
             return {
                 ...state,
                 dogs: filtTemp,
             }
         case "FILTER_CREATED":
-            const Filtercreated = action.payload === "created" ? state.alldogs.filter(el => el.createdInDb) :
-                state.alldogs.filter(el => !el.createdInDb)
+            let Filtercreated={}
+            if(action.payload==="created"){
+                 Filtercreated =  state.dogs.filter(el => el.createdInDb)
+            }
+            if(action.payload==="exist"){
+                 Filtercreated =  state.dogs.filter(el => !el.createdInDb)
+            }
             return {
                 ...state,
                 dogs: action.payload === "all" ? state.alldogs : Filtercreated
