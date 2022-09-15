@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 
 import { validate } from "./Validator";
-import { setTemperaments, postDog } from "../redux/actions/productActions";
+import { getTemps, postDog } from "../redux/actions/productActions";
 import Header from "../Header/Header";
 import "./Create.css"
 
@@ -16,16 +16,17 @@ export default function DogCreate() {
   const [temps, setTemps] = useState([]);
   const [input, setInput] = useState({
     name: "",
-    min_weight: "",
-    max_weight: "",
-    min_height: "",
-    max_height: "",
-    life_span: "",
-    temperament: []
+    heightMin: "",
+    heightMax: "",
+    weightMin: "",
+    weightMax: "",
+    lifeSpan: "",
+    image: "",
+    temperament: [],
   })
 
   useEffect(() => {
-    dispatch(setTemperaments());
+    dispatch(getTemps());
   }, [dispatch])
 
   function handleChange(e) {
@@ -38,11 +39,9 @@ export default function DogCreate() {
       [e.target.name]: e.target.value,
     })
     );
- 
   }
 
-
-  /*function handleSelect(e) {
+  function handleSelect(e) {
     if (!temps.includes(e.target.value)) {
       if (temps.length > 0) {
         setTemps([...temps, e.target.value]);
@@ -51,23 +50,26 @@ export default function DogCreate() {
       }
     }
   }
-
   function handleDelete(e) {
     e.preventDefault();
     setTemps(temps.filter((temp) => temp !== e.target.value));
-  }*/
+  }
 
-  function handlesubmit(e) {
-    if (input.name && input.min_weight && input.max_weight
-      && input.min_height && input.max_height && input.life_span && input.temperament) {
+  function handleSubmit(e) {
+    if (
+      input.name &&
+      input.weightMin &&
+      input.heightMax &&
+      input.weightMax &&
+      input.heightMin &&
+      input.temperament) {
       const newDog = {
         name: input.name,
-        min_height:input.min_height,
-        max_height:input.max_height,
-        min_weight: input.min_weight,
-        max_weight:input.max_weight,
-        life_span: input.life_span,
-        
+        height: [input.heightMin,input.heightMax],
+        weight: [input.weightMin,input.weightMax],
+        life_span: input.lifeSpan+" years",
+        createdInDb:true,
+        temperament: temps,
       }
       e.preventDefault();
       dispatch(postDog(newDog))
@@ -84,81 +86,115 @@ export default function DogCreate() {
       setTemps([])
     } else { return alert("We need more information of the Lord") }
   }
-
-
-
-
-
-
-
-
   return (
     <div className="detailall">
-    <div className="Titulo" >
-      <Header />
-    </div>
-    <div className="Cuerpo">
-<div className="contenedor">
-      <form onSubmit={(e) => handlesubmit(e)}>
-
-        <div className="name">
-          <input type="text" name="name" value={input.name} onChange={handleChange} placeholder="name"></input> 
-        </div>
-        {/*  /////////////////*/}
-        <div className="height">
-          <input type="number" name="min_height" value={input.min_height} onChange={handleChange}placeholder="Height min"></input>
-          <input type="number" name="max_height" value={input.max_height} onChange={handleChange}placeholder="Height Max"></input>
-          </div>
-          <div className="weight">
-          <input type="number" name="min_weight" value={input.min_weight} onChange={handleChange}placeholder="Weight min"></input>
-          <input type="number" name="max_weight" value={input.max_weight} onChange={handleChange}placeholder="Weight Max"></input>
-        </div>
-        {/*  /////////////////*/}
-        <div className="lifespan">
-          <input type="number" name="life_span" value={input.life_span} onChange={handleChange}placeholder="life_span"></input>
-        </div>
-        {/*  /////////////////*/}
-        <div className="temperament">
-        <select name="temperament" onChange={handleChange} placeholder="Temperaments">
-          {temperaments.map((temp,id)=>(
-            <option key={id} value={null}>
-              {temp.name}
-            </option>
-          ))}
-        </select>
-        {temps.map((temp,id)=>{
-          return(
-            <React.Fragment key={id}>
-                <div>
-                  {" "}
-                  {temp}
-                  <button value={temp} onClick={handleChange}> </button>
-                </div>
-            </React.Fragment>
-          )
-        })}
-        </div>
-        {/*  /////////////////*/}
-        <div>
-          <button type="submit">Add Lord </button>
-        </div>
-
-      </form>
+      <div className="Titulo" >
+        <Header />
       </div>
-      <div>{
-        
-      }</div>
-      <div className="contenedor">
-        {errors.name && (<p>{errors.name}</p>)}
-        {errors.min_height && (<p>{errors.min_height}</p>)}
-        {errors.max_height && (<p>{errors.max_height}</p>)}
-        {errors.altura &&(<p>{errors.altura}</p>)}
-        {errors.min_weight && (<p>{errors.min_weight}</p>)}
-        {errors.max_weight && (<p>{errors.max_weight}</p>)}
-        {errors.peso &&(<p>{errors.peso}</p>)}
-        {errors.number &&(<p>{errors.number}</p>)}
-        {errors.life_span && (<p>{errors.life_span}</p>)}
-      </div>
+      <div className="Cuerpo">
+        <div className="contenedor">
+          <img src="https://i.imgur.com/sEQ4sI3.png" alt="titulo" className="imgdetail3" />
+          <form  onSubmit={(e) => handleSubmit(e)}>
+
+            <div >
+              <input 
+              className="inputs" 
+              type="text" 
+              placeholder="name"
+              value={input.name} 
+              name="name" 
+              onChange={(e) => handleChange(e)} 
+              />
+            </div>
+            {/*  /////////////////*/}
+            <div >
+              <input 
+              className="inputs" 
+              type="number" 
+              value={input.heightMin}
+              name="heightMin" 
+              placeholder="Height min"
+              onChange={(e) => handleChange(e)} 
+              />
+              <input 
+              className="inputs" 
+              type="number" 
+              value={input.heightMax}
+              name="heightMax" 
+              placeholder="Height Max"
+              onChange={(e) => handleChange(e)} 
+              />
+            </div>
+            <div className="weight">
+              <input 
+              className="inputs" 
+              type="number" 
+              value={input.weightMin} 
+              name="weightMin" 
+              placeholder="Weight min"
+              onChange={(e) => handleChange(e)} 
+              />
+              <input 
+              className="inputs" 
+              type="number" 
+              value={input.weightMax} 
+              name="weightMax" 
+              placeholder="Weight Max"
+              onChange={(e) => handleChange(e)} 
+              />
+            </div>
+            {/*  /////////////////*/}
+            <div >
+              <input 
+              className="inputs" 
+              type="number" 
+              value={input.lifeSpan} 
+              name="lifeSpan" 
+              onChange={(e) => handleChange(e)} 
+              placeholder="life_span"/>
+            </div>
+            {/*  /////////////////*/}
+            <div >
+              <select className="inputs" 
+              name="temperament" onChange={(e) => handleSelect(e)} placeholder="Temperaments">
+                {temperaments.map((temp, id) => (
+                  <option key={id} value={null}>
+                    {temp.name}
+                  </option>
+                ))}
+              </select>
+              {temps.map((temp, id) => {
+                return (
+                  <React.Fragment key={id}>
+                    <div>
+                      {" "}
+                      {temp}
+                      <button  value={temp} onClick={(e) => handleDelete(e)}>
+                      x
+                    </button>
+                    </div>
+                  </React.Fragment>
+                )
+              })}
+            </div>
+            {/*  /////////////////*/}
+            <div>
+              <button className="inputs" type="submit">Add Lord </button>
+            </div>
+
+          </form>
+        </div>
+        <div>{
+
+        }</div>
+        <div className="contenedor">
+          <img alt="imgdog" className="imgdetail2" src={"https://cdn.shopify.com/s/files/1/0420/1801/3336/products/1_fda6f71c-fef0-4d3c-a901-bb0c094ccf48_1024x1024@2x.jpg?v=1623862299"} />
+          {<p>Lord name:{input.name}</p>}
+          {<p>Height:{input.heightMin}-{input.heightMax}</p>}
+          {<p>Weight:{input.weightMin}-{input.weightMax}</p>}
+          {<p>Life Span:{input.lifeSpan}</p>}
+
+        </div>
       </div>
     </div>
   )

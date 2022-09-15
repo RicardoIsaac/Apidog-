@@ -7,7 +7,8 @@
    padding-bottom: 3%;
    padding-left: 3%;
    padding-right: 3%;
-    max-width: 700px;
+    max-width: 100px;
+    max-height: 800px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -15,7 +16,7 @@
 
 .imgdetail{
     filter: sepia(100%);
-    width:700px;
+    width:500px;
 }
 .detailall{
     background-image: url("https://www.trinity.ox.ac.uk/sites/default/files/styles/banner_1920x1280_/public/2020-10/old_library_south.jpg?h=6ec068e9&itok=SqT5InpL");

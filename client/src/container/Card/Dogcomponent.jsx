@@ -2,14 +2,23 @@ import React from "react";
 import "./DogComponent.css"
 
 
-const Card = ({image,name,temperament,weight}) => {
-    let texto="";
+export default function Card ({image,name,temperament,weight,TempDogs})  {
+let texto="";
+    if(temperament){
     for (let i = 0; i < temperament.length; i++) {
         texto = texto+temperament[i]+" ";
         
     }
-console.log(name)
-console.log("//////////////////")
+    console.log(temperament)}
+    if(TempDogs){
+        for (let i = 0; i < temperament.length; i++) {
+            texto = texto+temperament[i]+" ";
+            
+        }
+        console.log(temperament)  
+    }
+//console.log(name)
+//console.log("//////////////////")
 
         return (
            <div>
@@ -40,4 +49,4 @@ console.log("//////////////////")
     
  
 
-export default Card
+

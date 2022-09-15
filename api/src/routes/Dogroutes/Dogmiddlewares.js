@@ -26,7 +26,12 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/create", async (req, res) => {
-    let { name, min_height, max_height, min_weight, max_weight, life_span,createdInDb, temperaments, } = req.body
+    let { name, 
+        height, 
+        weight, 
+        life_span,
+        createdInDb,
+        temperament } = req.body
  
     function getImage(){
         var images=[
@@ -40,32 +45,27 @@ router.post("/create", async (req, res) => {
       
         return images[imge]
       }
-    let fixedHeight = []
-    let minHeight = min_height;
-    let maxHeight = max_height;
-    fixedHeight.push(minHeight, maxHeight)
 
-    let fixedWeight = []
-    let minWeight = min_weight;
-    let maxWeight = max_weight;
-    fixedWeight.push(minWeight, maxWeight)
-
-    let dog = await Dog.create({
-        name,
-        height: fixedHeight,
-        weight: fixedWeight,
-        life_span,
+try {
+       const newDog = await Dog.create({
+        name, 
+        height, 
+        weight, 
+        life_span, 
         image:getImage(),
         createdInDb
-    })
-    
-        let associatedTemp = await TempDog.findAll({
-            where: { name: temperaments},
         })
+        name
+            let associatedTemp = await TempDog.findAll({
+                where: { name: temperament},
+            })
+        
+        newDog.addTempDog(associatedTemp);
     
-    dog.addTempDog(associatedTemp);
-
-    res.status(200).send(dog)
+        res.status(200).send(newDog)
+} catch (error) {
+    res.status(400).send(error)
+}
 })
 
 router.get("/:idRaza", async (req, res) => {
@@ -78,19 +78,5 @@ router.get("/:idRaza", async (req, res) => {
         res.status(404).send("Dog no found in the Data");
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router

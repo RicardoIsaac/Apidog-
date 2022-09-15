@@ -1,14 +1,15 @@
 .detailall{
     background-image: url("https://www.trinity.ox.ac.uk/sites/default/files/styles/banner_1920x1280_/public/2020-10/old_library_south.jpg?h=6ec068e9&itok=SqT5InpL");
-    position: fixed;
-    top:0%;
-    left:0%;
+    height:1000px;
+    top:0px;
+    left:0px;
     min-width: 100%;
     min-height: 100%;
+
     
 }
 .Cuerpo{
-    padding-top: 20%;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -28,4 +29,20 @@
     margin: auto;
     text-align: center;
     font-family: arial;
+}
+.imgdetail2{
+    filter: sepia(100%);
+    width:300px;
+}
+
+.imgdetail3{
+    filter: sepia(50%);
+    width:500px;
+}
+.inputs{
+  
+    border-color: rgba(0, 0, 0, 0.253) ;
+    background-color: transparent;
+
+
 }

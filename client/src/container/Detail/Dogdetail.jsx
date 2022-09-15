@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import Header from "../Header/Header";
-import { selectesDogs } from "../redux/actions/productActions";
+import { getDetail } from "../redux/actions/productActions";
 import "./Detail.css"
 
 export default function DogDetails() {
@@ -15,7 +15,7 @@ export default function DogDetails() {
     console.log(id)
     console.log(myDog)
     useEffect(() => {
-      dispatch(selectesDogs(id));
+      dispatch(getDetail(id));
     }, [dispatch, id]);
 
 
@@ -33,7 +33,7 @@ export default function DogDetails() {
             <p>Height: {myDog[0].height[0]}-{myDog[0].height[1]} cm</p>
             <p>Life Span: {myDog[0].life_span}</p>
             <p>
-              Temperaments: {myDog[0].temperaments.map((el) => el + ', ')}
+              Temperaments: {myDog[0].temperaments? myDog[0].temperaments.map((el) => el + ', '):myDog[0].TempDogs.map((el) => el + ', ')}
             </p>
             </div>
           </div>

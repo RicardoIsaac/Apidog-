@@ -1,0 +1,14 @@
+.audio-player-container{
+    position: relative;
+    margin: 100px 5% auto 5%;
+    width: 90%;
+    max-width: 500px;
+    height: 80px;
+    background: rgb(0, 0, 0);
+}
+.fff{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+}

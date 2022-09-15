@@ -1,22 +1,34 @@
 import React from "react"
+import "./Pagination.css"
 
-export default function Paginated({dogsPerPage,alldogs,paginado}) {
-    const pageNumbers=[]
-    for(let i=1; i<=Math.ceil(alldogs/dogsPerPage); i++){
-      pageNumbers.push(i) 
-    }
-    return(
+export default function Paginated({ dogsPage, allDogs, paginated }) {
+  const pages = [];
+  const numberPages = Math.ceil(allDogs / dogsPage);
 
-        <ul className="paged">
-          {pageNumbers&& pageNumbers.map((num) => (
+  for (let i = 0; i < numberPages; i++) {
+    pages.push(i + 1);
+  }
+  return (
+    <nav className="Buttonspag">
+
+        {pages?.map((num) => (
+
+              <button className="buttonpag" onClick={() => paginated(num)}>
+                {num}
+              </button>
+
+        ))}
+
+    </nav>
+  );
+}
+{/*        <ul className="paged">
+          {pageNumbers?.map((num) => (
            
-              <li className="number" key={num}  onClick={() => paginado(num)}>
+              <button className="number" key={num}  onClick={() => dogsPerPage.paginado(num)}>
 <button type="button" >{num}</button>
-              </li>
+              </button>
 
           ))}
         </ul>
-
-    )
-
-}
+ */}
