@@ -8,7 +8,7 @@ import Card from "../Card/Dogcomponent.jsx";
 import Paginated from "../Paginated/Paginated.jsx";
 import SearchBar from "../Searchbar/searchbar.jsx";
 import Header from "../Header/Header.jsx";
-import Filter from "../Filter/DogFilter.jsx";
+
 import "./home.css"
 
 const Doghome = () => {
@@ -82,7 +82,7 @@ const Doghome = () => {
         <Header />
         <div>
 
-          {/*///////--Search,paginated,fiter--////// */}
+          {/*///////--Search,fiter--////// */}
           <div className="homesearch">
             <SearchBar setPage={setPage} />
 
@@ -99,7 +99,7 @@ const Doghome = () => {
             );
           })}
         </select>
-  
+  {/*///////--Filter db, exist--////// */}
         <select  onChange={(e) => handleFilterCreated(e)}>
           <option value="all">All</option>
           <option value="exist">Existing</option>
@@ -118,7 +118,7 @@ const Doghome = () => {
             </select>
 
             <button onClick={(e) => { handleReset(e); }}>Refresh</button>
-
+{/*///////--paginado--////// */}
             <div>
               <Paginated
                 dogsPage={dogsPage}

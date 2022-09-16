@@ -22,13 +22,3 @@ export default function Paginated({ dogsPage, allDogs, paginated }) {
     </nav>
   );
 }
-{/*        <ul className="paged">
-          {pageNumbers?.map((num) => (
-           
-              <button className="number" key={num}  onClick={() => dogsPerPage.paginado(num)}>
-<button type="button" >{num}</button>
-              </button>
-
-          ))}
-        </ul>
- */}
