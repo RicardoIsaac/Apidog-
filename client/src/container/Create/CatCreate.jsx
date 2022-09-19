@@ -87,7 +87,7 @@ export default function CatCreate() {
         </div>
         <div className="Cuerpo">
           <div className="containerc">
-            <img src="https://i.imgur.com/sEQ4sI3.png" alt="titulo" className="imgdetail3" />
+            <img src="https://i.imgur.com/pqYBXWo.png" alt="titulo" className="imgdetail3" />
             <form  onSubmit={(e) => handleSubmit(e)}>
   
               <div >
@@ -177,8 +177,8 @@ export default function CatCreate() {
   
           }</div>
           <div className="containerc">
-            <img alt="imgdog" className="imgdetail2" src={"https://cdn.shopify.com/s/files/1/0420/1801/3336/products/1_fda6f71c-fef0-4d3c-a901-bb0c094ccf48_1024x1024@2x.jpg?v=1623862299"} />
-            {<p>Lord name:{input.name}</p>}
+            <img alt="imgdog" className="imgdetail2" src={"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ffc6e4e6-db43-4f8d-8398-20b36dca79f7/dds9ily-ee89f7f3-9c3f-454a-b56d-5e223ebe9f18.jpg/v1/fill/w_900,h_1723,q_75,strp/royal_cat_portrait_painting___regal_queen_cat_by_heymillymay_dds9ily-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcyMyIsInBhdGgiOiJcL2ZcL2ZmYzZlNGU2LWRiNDMtNGY4ZC04Mzk4LTIwYjM2ZGNhNzlmN1wvZGRzOWlseS1lZTg5ZjdmMy05YzNmLTQ1NGEtYjU2ZC01ZTIyM2ViZTlmMTguanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.e8YAVBJ2afgwUuj30UL0lVKb41jXBuAgMojDM46RG2o"} />
+            {<p>Lady name:{input.name}</p>}
             {<p>Lands:{input.origin}</p>}
             {<p>Weight:{input.weightMin}-{input.weightMax}</p>}
             {<p>Life Span:{input.lifeSpan}</p>}

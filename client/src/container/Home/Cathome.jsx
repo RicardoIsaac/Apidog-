@@ -121,9 +121,9 @@ const Cathome = () => {
 
 
             <div className="containerhome">
-
                 {currentCats ? (
                     currentCats.map((el) => {
+                      {console.log(el)}
                         return (
                             <div key={el.id}>
                                 <Link to={"/cats/" + el.id}>
@@ -132,6 +132,7 @@ const Cathome = () => {
                                         name={el.name}
                                         image={el.image}
                                         weight={el.weight}
+                                        createdInDb={el.createdInDb?true:null}
                                         temperament={
                                             el.temperament
                                                 ? el.temperament

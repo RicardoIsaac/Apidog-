@@ -22,7 +22,7 @@ export default function CatDetails() {
         {myCat[0] !== undefined ? (
           <div className="containerc">
             
-            <img className="imgdetail" src={myCat[0].image.url} 
+            <img className="imgdetail" src={myCat[0].image.url?myCat[0].image.url:myCat[0].image} 
             alt={myCat[0].name}  />
             <h1>Lady {myCat[0].name} </h1>
             <div className="letters">

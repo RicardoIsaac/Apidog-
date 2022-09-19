@@ -168,7 +168,8 @@
 
             /*---------CreateForm---------*/
 .detail{
-    background-image: url("https://www.trinity.ox.ac.uk/sites/default/files/styles/banner_1920x1280_/public/2020-10/old_library_south.jpg?h=6ec068e9&itok=SqT5InpL");
+  background-image: url("https://www.trinity.ox.ac.uk/sites/default/files/styles/banner_1920x1280_/public/2020-10/old_library_south.jpg?h=6ec068e9&itok=SqT5InpL");
+  background-size:cover;
     height:1000px;
     top:0px;
     left:0px;
@@ -189,7 +190,7 @@
     margin: top 3%;;
     border-width: 5%;
     padding-top: 3%;
-   padding-bottom: 3%;
+   padding-bottom: 1%;
    padding-left: 3%;
    padding-right: 3%;
     max-width: 700px;
