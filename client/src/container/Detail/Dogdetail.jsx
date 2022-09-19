@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import Header from "../Header/Header";
 import { getDetail } from "../redux/actions/productActions";
-import "./Detail.css"
+import "../Styles/Styles.css"
 
 export default function DogDetails() {
     
@@ -21,10 +21,10 @@ export default function DogDetails() {
 
 
     return(
-        <div className="detailall">
+        <div className="detail">
             <Header/>
         {myDog !== undefined ? (
-          <div className="contenedor">
+          <div className="containerc">
             <img className="imgdetail" src={myDog[0].image} 
             alt={myDog[0].name}  />
             <h1>Lord {myDog[0].name} </h1>

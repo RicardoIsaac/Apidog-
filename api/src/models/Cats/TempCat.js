@@ -1,6 +1,8 @@
 const { DataTypes } = require('sequelize');
+
 module.exports = (sequelize) => { 
-  sequelize.define('TempDog', { 
+
+  sequelize.define('TempCat', { 
 
     name: {
         type: DataTypes.STRING,

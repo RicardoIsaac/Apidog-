@@ -1,16 +1,7 @@
 const { Router } = require('express');
 const { Dog, TempDog } = require('../../db');
-const express = require('express');
 const getAllDogs = require("./getalldogs")
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
 const router = Router();
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-
-//-- Get data from the database posgrest--//
 
 
 //////////////////////////////////////////////////////////
@@ -55,7 +46,7 @@ router.post("/create", async (req, res) => {
             image: getImage(),
             createdInDb
         })
-        name
+    
         let associatedTemp = await TempDog.findAll({
             where: { name: temperament },
         })
@@ -75,7 +66,7 @@ router.get("/:idRaza", async (req, res) => {
     if (dog.length) {
         res.status(200).json(dog);
     } else {
-        res.status(404).send("Dog no found in the Data");
+        res.status(404).send("Dog not found in the Data");
     }
 });
 

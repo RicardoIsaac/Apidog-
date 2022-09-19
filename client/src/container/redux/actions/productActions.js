@@ -91,3 +91,80 @@ export function postDog(payload) {
         }
 
 }
+////////////////////////// Cat Actions ////////////////////////////////////////
+
+export function getCats() {
+    return function (dispatch) {
+        return axios.get("http://localhost:3001/cats")
+        .then((response)=>{
+            dispatch({
+                type:"GET_CATS",
+                payload:response.data
+            })
+        })
+    }
+}
+export function getCatTemps() {
+    return function (dispatch) {
+        return axios.get("http://localhost:3001/temperamentocat")
+        .then((response)=>{
+            dispatch({
+                type:"GET_CAT_TEMPERAMENTS",
+                payload:response.data
+            })
+        })
+    }
+}
+export function getNameCats(name) {
+ 
+    return async function (dispatch) {
+        let json = await axios.get(`http://localhost:3001/cats?name=${name}`)
+        return dispatch({
+            type: "GET_CAT_NAME",
+            payload: json.data,
+        })
+    }
+}
+export function FilterByTempCat(payload) {
+    return {
+        type: "FILTER_CAT_TEMPERAMENTS",
+        payload
+    }
+}
+export function filterCreatedCat(payload) {
+    return {
+        type: "FILTER_CAT_CREATED",
+        payload
+    }
+}
+export function OrderNameCat(payload) {
+    return {
+        type: "ORDER_BY_CAT_NAME",
+        payload
+    }
+}
+export function OrderWeightCat(payload) {
+    return {
+        type: "ORDER_BY_CAT_WEIGHT",
+        payload
+    }
+}
+export function getCatDetail(id) {
+    return async function (dispatch) {
+        var json = await axios.get(`http://localhost:3001/cats/${id}`)
+        return dispatch({
+            type: "GET_CAT_DETAIL",
+            payload: json.data,
+        })
+    }
+}
+export function postCAT(payload) {
+    return async function (dispatch) {
+        const response = await axios.post("http://localhost:3001/cats/create", payload)
+        return dispatch({
+            type: "POST_CAT",
+            payload: response.data
+        })
+    }
+
+}

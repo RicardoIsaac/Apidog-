@@ -1,5 +1,5 @@
 import React from "react"
-import "./Pagination.css"
+import "../Styles/Styles.css"
 
 export default function Paginated({ dogsPage, allDogs, paginated }) {
   const pages = [];

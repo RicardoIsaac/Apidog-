@@ -2,14 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { getDogs, OrderName, OrderWeight, getTemps, FilterByTemp,filterCreated, getNameDogs } from "../redux/actions/productActions.js";
-//import {, setBreed, FilterByTemperament, selectesDogs, postDog } from "../redux/actions/productActions.js";
+import { getDogs, OrderName, OrderWeight, getTemps, FilterByTemp,filterCreatedCat, getNameDogs } from "../redux/actions/productActions.js";
 import Card from "../Card/Dogcomponent.jsx";
 import Paginated from "../Paginated/Paginated.jsx";
 import SearchBar from "../Searchbar/searchbar.jsx";
 import Header from "../Header/Header.jsx";
 
-import "./home.css"
+import "../Styles/Styles.css"
 
 const Doghome = () => {
   ///////--State & Dispatch--//////
@@ -57,7 +56,7 @@ const Doghome = () => {
   ///////--filtro por creacion--//////
   function handleFilterCreated(e) {
   
-    dispatch(filterCreated(e.target.value));
+    dispatch(filterCreatedCat(e.target.value));
     setPage(1)
   }
 
@@ -80,12 +79,10 @@ const Doghome = () => {
       {/*///////--Navegador--////// */}
       <div className="homebody">
         <Header />
-        <div>
-
+  ---      <div className="Filters_search">
           {/*///////--Search,fiter--////// */}
           <div className="homesearch">
             <SearchBar setPage={setPage} />
-
           {/*///////--Filter Temps Database--////// */}
           <select  onChange={(e) => handleFilterTemp(e)}>
           <option key={0} value="temperament">
@@ -130,17 +127,17 @@ const Doghome = () => {
         </div>
 
         {/*///////--Renderisado--////// */}
-        <div className="container">
+        <div className="containerhome">
         {currentDogs ? (
           currentDogs.map((el) => {
             return (
               <div key={el.id}>
                 <Link to={"/dogs/" + el.id}>
-                  <Card
-                  
+                  <Card             
                     key={el.id}
                     name={el.name}
                     image={el.image}
+                    weight={el.weight}
                     temperament={
                       el.temperament
                         ? el.temperament
@@ -152,15 +149,10 @@ const Doghome = () => {
                         el.TempDogs.map((TempDogs)=>(
                           TempDogs.name)):false
                       }
-
-                      weight={el.weight}
                       />
-                </Link>
-
-                      
-                      
-              </div>
-              
+                      {console.log(currentDogs)}
+                </Link>           
+              </div>              
             );
           })
         ) : (

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { validate } from "./Validator";
 import { getTemps, postDog } from "../redux/actions/productActions";
 import Header from "../Header/Header";
-import "./Create.css"
+import "../Styles/Styles.css"
 
 
 export default function DogCreate() {
@@ -84,15 +84,16 @@ export default function DogCreate() {
         temperament: [],
       });
       setTemps([])
-    } else { return alert("We need more information of the Lord") }
+    } else { return alert(errors.map((errors)=>errors)) }
+    console.log(errors)
   }
   return (
-    <div className="detailall">
+    <div className="detail">
       <div className="Titulo" >
         <Header />
       </div>
       <div className="Cuerpo">
-        <div className="contenedor">
+        <div className="containerc">
           <img src="https://i.imgur.com/sEQ4sI3.png" alt="titulo" className="imgdetail3" />
           <form  onSubmit={(e) => handleSubmit(e)}>
 
@@ -105,6 +106,7 @@ export default function DogCreate() {
               name="name" 
               onChange={(e) => handleChange(e)} 
               />
+
             </div>
             {/*  /////////////////*/}
             <div >
@@ -152,6 +154,7 @@ export default function DogCreate() {
               name="lifeSpan" 
               onChange={(e) => handleChange(e)} 
               placeholder="life_span"/>
+           
             </div>
             {/*  /////////////////*/}
             <div >
@@ -187,13 +190,13 @@ export default function DogCreate() {
         <div>{
 
         }</div>
-        <div className="contenedor">
+        <div className="containerc">
           <img alt="imgdog" className="imgdetail2" src={"https://cdn.shopify.com/s/files/1/0420/1801/3336/products/1_fda6f71c-fef0-4d3c-a901-bb0c094ccf48_1024x1024@2x.jpg?v=1623862299"} />
           {<p>Lord name:{input.name}</p>}
           {<p>Height:{input.heightMin}-{input.heightMax}</p>}
           {<p>Weight:{input.weightMin}-{input.weightMax}</p>}
           {<p>Life Span:{input.lifeSpan}</p>}
-
+          {/*errors.name &&(<p>{errors.name}</p>)*/}
         </div>
       </div>
     </div>

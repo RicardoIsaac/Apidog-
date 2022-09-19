@@ -1,7 +1,5 @@
 const { Router } = require('express');
-const { Dog, TempDog } = require('../../db');
-const express = require('express');
-const getAllDogs=require("./getalldogs")
+const { TempDog } = require('../../db');
 const axios = require('axios');
 
 const router = Router();

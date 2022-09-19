@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch  } from "react-redux";
 import { getNameDogs } from "../redux/actions/productActions";
-import "./searchbar.css"
+import "../Styles/Styles.css" 
 
 export default function SearchBar( { setPage } ) {
     const dispatch = useDispatch();

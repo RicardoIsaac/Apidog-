@@ -1,7 +1,7 @@
 import React from "react"
 import "../Styles/Styles.css"
 
-const Headercat = () => {
+const Header = () => {
     return (
   <div className="navicon">
   <a href="/" className="active">Seleccionar especie</a>
@@ -12,4 +12,4 @@ const Headercat = () => {
 
     )
 }
-export default Headercat;
+export default Header;

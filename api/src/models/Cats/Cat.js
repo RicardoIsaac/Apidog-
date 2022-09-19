@@ -1,7 +1,8 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('Dog', {
+
+  sequelize.define('Cat', {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
@@ -12,8 +13,8 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    height: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+    origin: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     weight: {

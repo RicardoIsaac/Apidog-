@@ -1,5 +1,5 @@
 import React from "react";
-import "./DogComponent.css"
+import "../Styles/Styles.css"
 
 
 export default function Card ({image,name,temperament,weight,TempDogs})  {
@@ -19,8 +19,6 @@ let texto="";
 
       
     }
-//console.log(name)
-//console.log("//////////////////")
 
         return (
            <div>
@@ -32,13 +30,8 @@ let texto="";
                 </div>
                 <div className="card-back">
                 <div>Nombre: {name}</div>
- {/*texto para cambiar valores*/}           {texto?(<div>Temperamento: {texto}</div>):( <div>The temperament of this dog has been lost in the great war</div>) }
+        {texto?(<div>Temperamento: {texto}</div>):( <div>The temperament of this dog has been lost in the great war</div>) }
 
-              { /* <div>Temperamento: </div>
-                <div>
-                    <p>{texto}</p>
-                </div>
-        */}
                 <div>Tamaño: {weight[0]}-{weight[1]} cm</div>
                 </div>
                 </div>
