@@ -4,10 +4,11 @@ import Doghome from './container/Home/Doghome';
 import DogDetails from './container/Detail/Dogdetail.jsx';
 import Landingpage from "./container/LandingPage/Landingpage.jsx"
 import DogCreate from "./container/Create/DogCreate.jsx"
-import Footer from './container/footer/footer';
 import Cathome from './container/Home/Cathome';
 import CatCreate from './container/Create/CatCreate';
 import CatDetails from './container/Detail/Catdetail';
+import Creditsdog from './container/Credits/Creditsdog';
+import Creditscat from './container/Credits/Creditscat';
 
 
 function App() {
@@ -27,10 +28,12 @@ function App() {
       <Route path="/dogs/:id"  component={DogDetails}/>
       <Route path="/cats/:id"  component={CatDetails}/>
 
+      <Route path="/creditsdog"  component={Creditsdog}/>
+      <Route path="/creditscat"  component={Creditscat}/>
+
       </Switch>
       </Router>
       
-      {/*<Footer/>*/}
     </div>
   );
 }

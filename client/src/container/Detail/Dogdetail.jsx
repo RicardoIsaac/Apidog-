@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
-import Header from "../Header/Header";
+import Headerdog from "../Header/Header";
 import { getDetail } from "../redux/actions/productActions";
 import "../Styles/Styles.css"
 
@@ -22,7 +22,7 @@ export default function DogDetails() {
 
     return(
         <div className="detail">
-            <Header/>
+            <Headerdog/>
         {myDog !== undefined ? (
           <div className="containerc">
             <img className="imgdetail" src={myDog[0].image} 

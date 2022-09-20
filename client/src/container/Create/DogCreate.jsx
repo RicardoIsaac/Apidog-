@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 
 import { validate } from "./Validator";
 import { getTemps, postDog } from "../redux/actions/productActions";
-import Header from "../Header/Header";
+import Headerdog from "../Header/Header";
 import "../Styles/Styles.css"
 
 
@@ -90,7 +90,7 @@ export default function DogCreate() {
   return (
     <div className="detail">
       <div className="Titulo" >
-        <Header />
+        <Headerdog />
       </div>
       <div className="Cuerpo">
         <div className="containerc">

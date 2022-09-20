@@ -6,7 +6,7 @@ import { getDogs, OrderName, OrderWeight, getTemps, FilterByTemp,filterCreatedCa
 import Card from "../Card/Dogcomponent.jsx";
 import Paginated from "../Paginated/Paginated.jsx";
 import SearchBar from "../Searchbar/searchbar.jsx";
-import Header from "../Header/Header.jsx";
+import Headerdog from "../Header/Header.jsx";
 
 import "../Styles/Styles.css"
 
@@ -78,7 +78,7 @@ const Doghome = () => {
     <div>
       {/*///////--Navegador--////// */}
       <div className="homebody">
-        <Header />
+        <Headerdog />
   ---      <div className="Filters_search">
           {/*///////--Search,fiter--////// */}
           <div className="homesearch">

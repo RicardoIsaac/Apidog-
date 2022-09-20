@@ -6,7 +6,7 @@ import { getCats, getCatTemps, getNameCats, FilterByTempCat, filterCreatedCat, O
 import CatCard from "../Card/Catcomponent";
 import Paginated from "../Paginated/Paginated";
 import Searchcat from "../Searchbar/searchcat";
-import Headercat from "../Header/Header";
+import Headercat from "../Header/Headercat";
 
 import "../Styles/Styles.css"
 

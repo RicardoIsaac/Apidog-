@@ -103,7 +103,7 @@ __IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estil
 
 Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
 
-__AAAAAAAAAAAAPagina inicial__: deben armar una landing page con 
+__Pagina inicial__: deben armar una landing page con 
 
 - [ ] Alguna imagen de fondo representativa al proyecto
 - [ ] Botón para ingresar al home (`Ruta principal`)
@@ -111,7 +111,7 @@ __AAAAAAAAAAAAPagina inicial__: deben armar una landing page con
 __Ruta principal__: debe contener
 
 - [ ] Input de búsqueda para encontrar razas de perros por nombre
-- [x] Área donde se verá el listado de razas de perros. Deberá mostrar su:
+- [] Área donde se verá el listado de razas de perros. Deberá mostrar su:
   - Imagen
   - Nombre
   - Temperamento
@@ -126,7 +126,7 @@ __Ruta principal__: debe contener
 
 __IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto las razas de perros traidas desde la API como así también las de la base de datos, pero NO está permitido almacenar en la base de datos las razas de perros de la API sino que solamente se pueden guardar aquellas creadas desde el form.
 
-__AAAAAAAAAAAAAAARuta de detalle de raza de perro__: debe contener
+__Ruta de detalle de raza de perro__: debe contener
 
 - [ ] Los campos mostrados en la ruta principal para cada raza (imagen, nombre y temperamento)
 - [ ] Altura
@@ -145,17 +145,17 @@ __Ruta de creación de raza de perro__: debe contener
 
 > Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. Pueden agregar las validaciones que consideren. Por ejemplo: Que el nombre de la raza no pueda contener números o símbolos, que el peso/altura mínimo no pueda ser mayor al máximo y viceversa, etc.
 
-## AAAAAAAAAAAAABase de datos
+## Base de datos
 
 El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterísco deben ser obligatorias):
 
-- [x] Raza con las siguientes propiedades:
+- [] Raza con las siguientes propiedades:
   - ID *
   - Nombre *
   - Altura *
   - Peso *
   - Años de vida
-- [x] Temperamento con las siguientes propiedades:
+- [] Temperamento con las siguientes propiedades:
   - ID
   - Nombre
 
@@ -169,17 +169,17 @@ Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
 
 __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y paginados brindados por la API externa, todas estas funcionalidades tienen que implementarlas ustedes.
 
-- [x] __GET /dogs__:
+- [] __GET /dogs__:
   - Obtener un listado de las razas de perro
   - Debe devolver solo los datos necesarios para la ruta principal
-- [x] __GET /dogs?name="..."__:
+- [] __GET /dogs?name="..."__:
   - Obtener un listado de las razas de perro que contengan la palabra ingresada como query parameter
   - Si no existe ninguna raza de perro mostrar un mensaje adecuado
-- [x] __GET /dogs/{idRaza}__:
+- [] __GET /dogs/{idRaza}__:
   - Obtener el detalle de una raza de perro en particular
   - Debe traer solo los datos pedidos en la ruta de detalle de raza de perro
   - Incluir los temperamentos asociados
-- [x] __POST /dogs__:
+- [] __POST /dogs__:
   - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de raza de perro por body
   - Crea una raza de perro en la base de datos relacionada con sus temperamentos
 - [ ] __GET /temperaments__:

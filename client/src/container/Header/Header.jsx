@@ -1,15 +1,16 @@
 import React from "react"
 import "../Styles/Styles.css"
 
-const Headercat = () => {
+const Headerdog = () => {
     return (
   <div className="navicon">
   <a href="/" className="active">Seleccionar especie</a>
-  <a href="/cats">Home</a>
-  <a href="/cats/create">Create</a>
+  <a href="/dogs">Home</a>
+  <a href="/dogs/create">Create</a>
+  <a href="/creditsdog">Credits</a>
   </div>
 
 
     )
 }
-export default Headercat;
+export default Headerdog;
