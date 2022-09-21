@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { getCatDetail } from "../redux/actions/productActions";
-import Headercat from "../Header/Header";
+import Headercat from "../Header/Headercat"
 import "../Styles/Styles.css"
 
 export default function CatDetails() {

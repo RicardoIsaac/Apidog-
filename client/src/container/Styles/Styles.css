@@ -73,7 +73,6 @@
   
     border: 3px solid goldenrod;
     background-image: url("https://images.unsplash.com/photo-1545873509-33e944ca7655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZCUyMHRleHR1cmV8ZW58MHx8MHx8&w=1000&q=80");
-  
     width: 210px;
     height: 42px;
     font-size: 14px;
@@ -86,7 +85,6 @@
     border: 3px solid goldenrod;
     background-image: url("https://images.unsplash.com/photo-1545873509-33e944ca7655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZCUyMHRleHR1cmV8ZW58MHx8MHx8&w=1000&q=80");
     color: rgb(126, 95, 18);
-  
     text-align: center;
     cursor: pointer;
     width: 100px;
@@ -183,14 +181,12 @@
     min-height: 100%;   
 }
 .Cuerpo{
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 .containerc{
-
     background-image: url("https://i.pinimg.com/564x/df/7f/4c/df7f4c51df5edae3e9bf78fef81f4000.jpg");
     background-size:cover;
     margin: top 3%;;
@@ -215,7 +211,6 @@
     width:500px;
 }
 .inputs{
-  
     border-color: rgba(0, 0, 0, 0.253) ;
     background-color: transparent;
 }
@@ -232,7 +227,6 @@
     background-size:cover;
     padding-bottom: 10%;
     align-items: center;
-   
 }
 
 .containerhome {
@@ -241,8 +235,6 @@ display: flex;
     justify-content: space-between;
     width: calc((100% ));
     align-content: stretch;
-
-    
     gap: 54px;
     padding: 2% 1%;
     padding-bottom: 5%;
