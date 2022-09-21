@@ -83,7 +83,7 @@ export default function CatCreate() {
     return (
         <div className="detail">
         <div className="Titulo" >
-          <Headercat />
+          <Headercat/>
         </div>
         <div className="Cuerpo">
           <div className="containerc">
