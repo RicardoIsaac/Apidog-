@@ -122,8 +122,8 @@
             /*---------Card---------*/
 .card {
     background-color: transparent;
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 187px;
     perspective: 1000px;
   }
 
@@ -167,8 +167,8 @@
   color: black;
 }
 .img{
-  width: 300px;
-  height: 200px;
+  width: 280px;
+  height: 187px;
   filter: sepia(90%);
 }
 
@@ -229,8 +229,9 @@
 .homebody{
     background-image: url("https://media.istockphoto.com/photos/black-grey-wooden-plank-wall-texture-background-old-natural-pattern-picture-id1321288902?k=20&m=1321288902&s=612x612&w=0&h=DXcFJlQyjX8BeSzj67BVw6DLLXutg_SsjVxp1jTvBvU=");
     background-position: center center; 
-    background-size:auto;
-    padding-bottom: 2%;
+    background-size:cover;
+    padding-bottom: 10%;
+    align-items: center;
    
 }
 
@@ -244,6 +245,7 @@ display: flex;
     
     gap: 54px;
     padding: 2% 1%;
+    padding-bottom: 5%;
     box-sizing: border-box;
     height: 100vh;
     background-image: url("https://mcdn.wallpapersafari.com/medium/34/15/usxQvS.jpg");
