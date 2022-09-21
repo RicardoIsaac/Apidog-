@@ -150,7 +150,7 @@ const Doghome = () => {
                           TempDogs.name)):false
                       }
                       />
-                      {console.log(currentDogs)}
+                     
                 </Link>           
               </div>              
             );

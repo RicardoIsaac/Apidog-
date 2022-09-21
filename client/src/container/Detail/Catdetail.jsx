@@ -10,11 +10,11 @@ export default function CatDetails() {
     const {id}=useParams();
     const dispatch = useDispatch();
     const myCat = useSelector((state) => state.detailcat);
-    console.log(id)
+   
     useEffect(() => {
         dispatch(getCatDetail(id));
       }, [dispatch, id]);
-      console.log(myCat[0])
+    
 
       return(
         <div className="detail">

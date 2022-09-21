@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { getCats, getCatTemps, getNameCats, FilterByTempCat, filterCreatedCat, OrderNameCat, OrderWeightCat, getCatDetail, postCAT } from "../redux/actions/productActions"
+import { getCats, getCatTemps, getNameCats, FilterByTempCat, filterCreatedCat, OrderNameCat, OrderWeightCat} from "../redux/actions/productActions"
 import CatCard from "../Card/Catcomponent";
 import Paginated from "../Paginated/Paginated";
 import Searchcat from "../Searchbar/searchcat";
@@ -123,7 +123,7 @@ const Cathome = () => {
             <div className="containerhome">
                 {currentCats ? (
                     currentCats.map((el) => {
-                      {console.log(el)}
+                      
                         return (
                             <div key={el.id}>
                                 <Link to={"/cats/" + el.id}>

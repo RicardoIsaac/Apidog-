@@ -3,7 +3,6 @@ import "../Styles/Styles.css"
 
 export default function CatCard({image,name,temperament,weight,TempCat,createdindb}) {
     let texto="";
-    let img="";
     if(temperament){
     for (let i = 0; i < temperament.length; i++) {
         texto = texto+temperament[i]+" ";
